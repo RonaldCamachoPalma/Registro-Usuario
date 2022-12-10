@@ -1,0 +1,59 @@
+<div class="login-box">
+  <form (ngSubmit)="onRegister()" #myForm="ngForm">
+    <h2>INGRESA TUS DATOS</h2>
+    <div class="input-group">
+      <label for="name">Nombre</label>
+      <input
+        type="text"
+        name="name"
+        required
+        id="name"
+        [(ngModel)]="register.name"
+      />
+      <p *ngIf="register.name === ''">El campo es requerido</p>
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        required
+        id="email"
+        [(ngModel)]="register.email"
+      />
+      <p *ngIf="register.email === ''">El campo es requerido</p>
+    </div>
+    <div class="input-group">
+      <label for="password">Contraseña</label>
+      <input
+        type="password"
+        name="password"
+        required
+        id="password"
+        [(ngModel)]="register.password"
+      />
+      <p *ngIf="register.password === ''">El campo es requerido</p>
+    </div>
+    <div id="form-button">
+      <button
+        [ngClass]="{
+          valid: myForm.valid,
+          invalid: myForm.invalid
+        }"
+        [disabled]="myForm.invalid"
+        type="submit"
+      >
+        Registrar
+      </button>
+      <button type="button">Accion</button>
+    </div>
+    <div *ngIf="showModal === true">
+      <h1>Datos enviados</h1>
+      <label for="name">Nombre</label>
+      <span>{{ register.name }}</span>
+      <label for="name">Email</label>
+      <span>{{ register.email }}</span>
+      <button type="button" (click)="onCloseModal()">Cerrar</button>
+    </div>
+  </form>
+</div>

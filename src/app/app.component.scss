@@ -1,0 +1,208 @@
+img {
+  width: 100px;
+}
+
+h1 {
+  color: chocolate;
+}
+
+.box {
+  height: 150px;
+  width: 200px;
+  overflow: auto;
+  background: red;
+}
+
+ul {
+  width: 20%;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products--grid {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h2,
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.message-error {
+  background: red;
+  color: white;
+  opacity: 0;
+  transition: all linear 0.5s;
+
+  &.invalid {
+    opacity: 1;
+  }
+}
+
+.styles {
+  display: flex;
+  flex-direction: column;
+}
+
+.line-error {
+  height: 0;
+  border-bottom: 3px solid;
+
+  &.invalid {
+    border-color: red;
+  }
+
+  &.valid {
+    border-color: green;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .products--grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+}
+
+@media screen and (min-width: 68em) {
+  .products--grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
+$form-bg: #f8f4e5;
+$form-border: rgb(233, 17, 17);
+$form-shadow: #f57733;
+$form-focus: #6bd4b1;
+$font-size: 12pt;
+$font-face: 'Spartan';
+$font-color: #2a293e;
+
+form {
+  background: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg2NC1taW5kLWZvb2RpbGx1c3RyYXRpb25zLTU4XzJfMS5qcGc.jpg')
+    center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  font-size: $font-size;
+  font-family: $font-face;
+  color: $font-color;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font-size: $font-size;
+  line-height: $font-size * 2;
+  font-family: $font-face;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 10pt;
+  line-height: $font-size * 2;
+  font-style:normal;
+  margin: 0 0 0.5em 0;
+}
+
+span {
+  font-size: 8pt;
+}
+
+em {
+  color: $form-border;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background: $form-bg;
+  padding-left: 5px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid $form-focus;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  display: block;
+  float: right;
+  line-height: $font-size * 2;
+  padding: 0 20px;
+  border: none;
+  background: $form-border;
+  color: white;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  &.valid {
+    cursor: pointer;
+  }
+  &.invalid {
+    background: gray;
+  }
+}
+
+::selection {
+  background: rgb(255, 199, 184);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid $form-focus;
+  -webkit-text-fill-color: $font-color;
+  -webkit-box-shadow: 0 0 0px 1000px $form-bg inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+form {
+  padding-top: 5em;
+}
+#form-button {
+  display: flex;
+  justify-content: space-between;
+}
+#form-button button {
+  margin: 8px 8px;
+}
+
+.input-group p {
+  color: red;
+  font-size: 12px;
+}
